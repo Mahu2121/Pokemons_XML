@@ -1,26 +1,47 @@
 package org.dam.model;
 
-import java.util.List;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class Evolution {
 
-    private int id;
-    private String name;
-    private Integer level;
-    private List<Evolution> evolutions;
-    private double maleRatio;
-    private double femaleRatio;
-    private List<String> eggGroups;
+    @JsonProperty("id")
+    private final int id;
 
-    public Evolution(int id, String name, Integer level, List<Evolution> evolutions, double maleRatio, double femaleRatio, List<String> eggGroups) {
+    @JsonProperty("name")
+    private final String name;
+
+    @JsonProperty("level")
+    private final Integer level;
+
+    @JsonCreator
+    public Evolution(
+            @JsonProperty("id") int id,
+            @JsonProperty("name") String name,
+            @JsonProperty("level") Integer level
+    ) {
         this.id = id;
         this.name = name;
         this.level = level;
-        this.evolutions = evolutions;
-        this.maleRatio = maleRatio;
-        this.femaleRatio = femaleRatio;
-        this.eggGroups = eggGroups;
     }
 
 
+    public Evolution(int id, String name) {
+        this.id = id;
+        this.name = name;
+        this.level = null;
+    }
+
+
+    public int getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public Integer getLevel() {
+        return level;
+    }
 }
