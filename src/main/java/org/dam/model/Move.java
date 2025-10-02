@@ -7,7 +7,7 @@ import java.util.List;
 
 public class Move {
 
-    @JsonProperty("type")
+    @JsonProperty("@type")
     private final String type;
 
     @JsonProperty("name")
@@ -16,16 +16,15 @@ public class Move {
     @JsonProperty("machine")
     private final String machine;
 
-    @JsonProperty("level")
+    @JsonProperty("lvl")
     private final Integer level;
-
 
     @JsonCreator
     public Move(
-            @JsonProperty("type") String type,
+            @JsonProperty("@type") String type,
             @JsonProperty("name") String name,
             @JsonProperty("machine") String machine,
-            @JsonProperty("level") Integer level
+            @JsonProperty("lvl") Integer level
     ) {
         this.type = type;
         this.name = name;
@@ -45,13 +44,21 @@ public class Move {
     public String getType() {
         return type;
     }
+
     public String getName() {
         return name;
     }
+
     public String getMachine() {
         return machine;
     }
+
     public Integer getLevel() {
         return level;
+    }
+
+    @Override
+    public String toString() {
+        return "Move [type=" + type + ", name=" + name + ", machine=" + machine;
     }
 }

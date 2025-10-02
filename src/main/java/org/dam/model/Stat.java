@@ -5,33 +5,32 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class Stat {
 
-    @JsonProperty("hp")
+    @JsonProperty("HP")
     private final int hp;
 
-    @JsonProperty("atk")
+    @JsonProperty("ATK")
     private final int atk;
 
-    @JsonProperty("def")
+    @JsonProperty("DEF")
     private final int def;
 
-    @JsonProperty("spd")
+    @JsonProperty("SPD")
     private final int spd;
 
-    @JsonProperty("sat")
+    @JsonProperty("SAT")
     private final int sat;
 
-    @JsonProperty("sdf")
+    @JsonProperty("SDF")
     private final int sdf;
-
 
     @JsonCreator
     public Stat(
-            @JsonProperty("hp") int hp,
-            @JsonProperty("atk") int atk,
-            @JsonProperty("def") int def,
-            @JsonProperty("spd") int spd,
-            @JsonProperty("sat") int sat,
-            @JsonProperty("sdf") int sdf
+            @JsonProperty("HP") int hp,
+            @JsonProperty("ATK") int atk,
+            @JsonProperty("DEF") int def,
+            @JsonProperty("SPD") int spd,
+            @JsonProperty("SAT") int sat,
+            @JsonProperty("SDF") int sdf
     ) {
         this.hp = hp;
         this.atk = atk;
@@ -73,5 +72,10 @@ public class Stat {
 
     public int getSdf() {
         return sdf;
+    }
+
+    @Override
+    public String toString() {
+        return "Stat [hp=" + hp + ", atk=" + atk + ", def=" + def + ", spd=" + spd + ", sat=" + sat + ", sdf=" + sdf + "]";
     }
 }

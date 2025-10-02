@@ -34,4 +34,10 @@ public class Ratio {
     public double getFemale() {
         return female;
     }
+
+    @Override
+    public String toString() {
+        return "Ratio [male=" + male + ", female=" + female + "]";
+    }
+
 }
