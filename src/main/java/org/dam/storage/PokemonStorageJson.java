@@ -26,14 +26,4 @@ public class PokemonStorageJson implements PokemonStorage {
         return List.of();
     }
 
-    @Override
-    public void writeFromFile(File file, List<Pokemon> pokemons) {
-        try {
-            ObjectMapper mapper = new ObjectMapper();
-            mapper.writeValue(file,pokemons);
-        } catch (IOException e) {
-            System.out.println(e);
-
-        }
-    }
 }
